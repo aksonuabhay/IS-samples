@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Sample Talker Output</name>
+  <description>
+    Auto-generated activity for Sample Talker Output
+  </description>
+
+  <identifyingName>sample.talker.output</identifyingName>
+  <version>1.0.0</version>
+
+  <activity type="interactivespaces_native">
+    <name>sample.talker.output</name>
+    <class>sample.talker.output.SampleTalkerOutputActivity</class>
+    <configuration>
+      <property name="space.activity.ros.node.name" value="sample/routable/output" />
+      
+      <property name="space.activity.routes.outputs" value="output1" />
+      
+      <property name="space.activity.route.output.output1" value="sample/routable/channel1" />
+      
+      <property name="space.activity.log.level" value="info">
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
