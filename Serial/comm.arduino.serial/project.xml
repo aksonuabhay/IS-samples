@@ -6,14 +6,15 @@
   </description>
 
   <identifyingName>comm.arduino.serial</identifyingName>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
 
   <activity type="interactivespaces_native">
     <name>comm.arduino.serial</name>
     <class>comm.arduino.serial.CommArduinoSerialActivity</class>
 
     <configuration>
-      <property name="space.activity.log.level" required="false">
+	  <property name="space.hardware.serial.port" required="true"/>
+      <property name="space.activity.log.level" value="info" >
         <value>info</value>
       </property>
     </configuration>
