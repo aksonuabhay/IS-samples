@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Comm Arduino Serial</name>
+  <description>
+    Auto-generated activity for Comm Arduino Serial
+  </description>
+
+  <identifyingName>comm.arduino.serial</identifyingName>
+  <version>0.0.1</version>
+
+  <activity type="interactivespaces_native">
+    <name>comm.arduino.serial</name>
+    <class>comm.arduino.serial.CommArduinoSerialActivity</class>
+
+    <configuration>
+      <property name="space.activity.log.level" required="false">
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
