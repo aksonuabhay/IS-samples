@@ -1,0 +1,16 @@
+<package>
+  <description brief="is_ros_bridge_test">
+
+     is_ros_bridge_test
+
+  </description>
+  <author>Abhay</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/is_ros_bridge_test</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+
+</package>
+
+
