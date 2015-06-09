@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Comm Ros Subscriber</name>
+  <description>
+    Auto-generated activity for Comm Ros Subscriber
+  </description>
+
+  <identifyingName>comm.ros.subscriber</identifyingName>
+  <version>1.0.0</version>
+
+  <activity type="interactivespaces_native">
+    <name>comm.ros.subscriber</name>
+    <class>comm.ros.subscriber.CommRosSubscriberActivity</class>
+    
+
+    <configuration>
+    <property name ="space.activity.ros.node.name" required ="true" value = "comm/ros/subscribe"/>
+    <property name ="comm.ros.subscriber.topic" required ="true" value = "output"/>
+    
+      <property name="space.activity.log.level" >
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
