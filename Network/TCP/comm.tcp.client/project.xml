@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Comm Tcp Client</name>
+  <description>
+    Auto-generated activity for Comm Tcp Client
+  </description>
+
+  <identifyingName>comm.tcp.client</identifyingName>
+  <version>1.0.0</version>
+
+  <activity type="interactivespaces_native">
+    <name>comm.tcp.client</name>
+    <class>comm.tcp.client.CommTcpClientActivity</class>
+
+    <configuration>
+      <property name = "space.comm.tcp.server.host" required = "false" value = "localhost" />
+      <property name = "space.comm.tcp.server.port" required = "false" value = "9000" />
+      <property name="space.activity.log.level" required="false">
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
