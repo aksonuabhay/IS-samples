@@ -32,7 +32,7 @@ public class CommTcpClientActivity extends BaseActivity {
 				
 				public void onTcpResponse(
 						TcpClientNetworkCommunicationEndpoint<String> arg0, String arg1) {
-						getLog().info("Server Responded" + arg1);
+						getLog().info(String.format("Server Responded %s" , arg1));
 					
 				}
 			});
