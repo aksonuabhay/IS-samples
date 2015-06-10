@@ -21,7 +21,7 @@ public class CommTcpClientActivity extends BaseActivity {
     public void onActivitySetup() {
         getLog().info("Activity comm.tcp.client setup");
         TcpClientNetworkCommunicationEndpointService commTcpClientService=getSpaceEnvironment().getServiceRegistry().getRequiredService(TcpClientNetworkCommunicationEndpointService.SERVICE_NAME);
-        String remoteTcpHost = getConfiguration().getRequiredPropertyString("space.comm.tcp.server.host");
+        String remoteTcpHost = getConfiguration().getPropertyString("space.comm.tcp.server.host","127.0.0.1");
         int remoteTcpPort = getConfiguration().getRequiredPropertyInteger("space.comm.tcp.server.port");
         
         try 
@@ -29,10 +29,10 @@ public class CommTcpClientActivity extends BaseActivity {
         	InetAddress remoteTcpHostAdress = InetAddress.getByName(remoteTcpHost);
         	tcpClient = commTcpClientService.newStringClient(MESSAGE_TERMINATORS, Charsets.UTF_8, remoteTcpHostAdress, remoteTcpPort, getLog());
         	tcpClient.addListener(new TcpClientNetworkCommunicationEndpointListener<String>() {
-				
+				@Override
 				public void onTcpResponse(
-						TcpClientNetworkCommunicationEndpoint<String> arg0, String arg1) {
-						getLog().info(String.format("Server Responded %s" , arg1));
+						TcpClientNetworkCommunicationEndpoint<String> client, String msg) {
+						getLog().info(String.format("Server Responded %s" , msg));
 					
 				}
 			});
@@ -57,13 +57,13 @@ public class CommTcpClientActivity extends BaseActivity {
     @Override
     public void onActivityActivate() {
         getLog().info("Activity comm.tcp.client activate");
-        tcpClient.write("Tcp Client Activated");
+        tcpClient.write("Tcp Client Activated\n");
     }
 
     @Override
     public void onActivityDeactivate() {
         getLog().info("Activity comm.tcp.client deactivate");
-        tcpClient.write("Tcp Client Deactivated");
+        tcpClient.write("Tcp Client Deactivated\n");
     }
 
     @Override

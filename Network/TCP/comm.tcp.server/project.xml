@@ -13,8 +13,10 @@
     <class>comm.tcp.server.CommTcpServerActivity</class>
 
     <configuration>
-      <property name = "space.comm.tcp.server.port" required = "true" value ="9000" />
-      <property name="space.activity.log.level" required="false">
+      <property name = "space.comm.tcp.server.port" required = "true" > 
+      	<value>9000</value>
+      </property>
+      <property name="space.activity.log.level" >
         <value>info</value>
       </property>
     </configuration>

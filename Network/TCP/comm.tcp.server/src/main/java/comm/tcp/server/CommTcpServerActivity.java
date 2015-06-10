@@ -6,6 +6,7 @@ import interactivespaces.service.comm.network.server.TcpServerNetworkCommunicati
 import interactivespaces.service.comm.network.server.TcpServerNetworkCommunicationEndpointService;
 import interactivespaces.service.comm.network.server.TcpServerRequest;
 
+
 import com.google.common.base.Charsets;
 /**
  * A simple Interactive Spaces Java-based activity.
@@ -17,16 +18,16 @@ public class CommTcpServerActivity extends BaseActivity {
     @Override
     public void onActivitySetup() {
         getLog().info("Activity comm.tcp.server setup");
-        TcpServerNetworkCommunicationEndpointService commTcpService = getSpaceEnvironment().getServiceRegistry().getRequiredService(TcpServerNetworkCommunicationEndpointService.SERVICE_NAME);
+        TcpServerNetworkCommunicationEndpointService commTcpServerService = getSpaceEnvironment().getServiceRegistry().getRequiredService(TcpServerNetworkCommunicationEndpointService.SERVICE_NAME);
         int serverPort= getConfiguration().getRequiredPropertyInteger("space.comm.tcp.server.port");
-        TcpServerNetworkCommunicationEndpoint<String> tcpServer = commTcpService.newStringServer(MESSAGE_TERMINATORS, Charsets.UTF_8, serverPort, getLog());
+        TcpServerNetworkCommunicationEndpoint<String> tcpServer = commTcpServerService.newStringServer(MESSAGE_TERMINATORS, Charsets.UTF_8, serverPort, getLog());
         tcpServer.addListener(new TcpServerNetworkCommunicationEndpointListener<String>() {
-			
+			@Override
 			public void onTcpRequest(
-					TcpServerNetworkCommunicationEndpoint<String> arg0,
-					TcpServerRequest<String> arg1) {
-					getLog().info(String.format("%s client requested : %s" ,arg1.getRemoteAddress(),arg1.getMessage() ));
-					arg1.writeMessage(String.format("Server received %s",arg1.getMessage()));
+					TcpServerNetworkCommunicationEndpoint<String> server,
+					TcpServerRequest<String> req) {
+					getLog().info(String.format("%s client requested : %s" ,req.getRemoteAddress(),req.getMessage() ));
+					req.writeMessage(String.format("Server received %s",req.getMessage()));
 			}
 		});
         addManagedResource(tcpServer);
