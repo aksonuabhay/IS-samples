@@ -26,7 +26,8 @@ public class CommUdpClientActivity extends BaseActivity {
 			
 			public void onUdpResponse(UdpClientNetworkCommunicationEndpoint client,
 					byte[] data, InetSocketAddress address) {
-				getLog().info("From : "+ address.toString()+" Client received : " + data.toString());
+				String message = new String(data);
+				getLog().info("From : "+ address.toString()+" Client received : " + message);
 				
 			}
 		});

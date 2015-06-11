@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Comm Udp Server</name>
+  <description>
+    Auto-generated activity for Comm Udp Server
+  </description>
+
+  <identifyingName>comm.udp.server</identifyingName>
+  <version>1.0.0</version>
+
+  <activity type="interactivespaces_native">
+    <name>comm.udp.server</name>
+    <class>comm.udp.server.CommUdpServerActivity</class>
+
+    <configuration>
+      <property name = "space.comm.udp.server.port" required = "true" >
+      	<value>9000</value>
+      </property>
+      <property name="space.activity.log.level" >
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
