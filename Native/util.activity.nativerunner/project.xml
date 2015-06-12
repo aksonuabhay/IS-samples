@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Util Activity Nativerunner</name>
+  <description>
+    Auto-generated activity for Util Activity Nativerunner
+  </description>
+
+  <identifyingName>util.activity.nativerunner</identifyingName>
+  <version>1.0.0</version>
+
+  <activity type="interactivespaces_native">
+    <name>util.activity.nativerunner</name>
+    <class>util.activity.nativerunner.UtilActivityNativerunnerActivity</class>
+
+    <configuration>
+      <property name="space.activity.executable.linux" required="true">
+      	<value>/usr/bin/mpg321</value>
+      </property>
+      
+      <property name="space.activity.executable.flags.linux" required="true">
+        <value>-q ${activity.installdir}/NativeActivityExample.mp3</value>
+        </property>
+        
+      <property name="space.activity.log.level" >
+        <value>info</value>
+      </property>
+      
+    </configuration>
+  </activity>
+</project>
