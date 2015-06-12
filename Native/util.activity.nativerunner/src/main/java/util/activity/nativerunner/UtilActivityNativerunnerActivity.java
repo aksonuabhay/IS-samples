@@ -21,8 +21,22 @@ public class UtilActivityNativerunnerActivity extends BaseActivity {
         getLog().info("Activity util.activity.nativerunner setup");
         nativeRunnerCollection = new StandardNativeApplicationRunnerCollection(getSpaceEnvironment(), getLog());
 		addManagedResource(nativeRunnerCollection);
+    }
 
-		runner = nativeRunnerCollection.newNativeApplicationRunner();
+    @Override
+    public void onActivityStartup() {
+        getLog().info("Activity util.activity.nativerunner startup");
+    }
+
+    @Override
+    public void onActivityPostStartup() {
+        getLog().info("Activity util.activity.nativerunner post startup");
+    }
+
+    @Override
+    public void onActivityActivate() {
+        getLog().info("Activity util.activity.nativerunner activate");
+        runner = nativeRunnerCollection.newNativeApplicationRunner();
 		runner.setExecutablePath(getConfiguration().getRequiredPropertyString("space.nativeapplication.executable"));
 		runner.parseCommandArguments(getConfiguration().getPropertyString("space.nativeapplication.executable.flags"));
 		runner.addNativeApplicationRunnerListener(new NativeApplicationRunnerListener() {
@@ -76,22 +90,6 @@ public class UtilActivityNativerunnerActivity extends BaseActivity {
 				getLog().info("Native application running");
 			}
 		});
-    }
-
-    @Override
-    public void onActivityStartup() {
-        getLog().info("Activity util.activity.nativerunner startup");
-    }
-
-    @Override
-    public void onActivityPostStartup() {
-        getLog().info("Activity util.activity.nativerunner post startup");
-    }
-
-    @Override
-    public void onActivityActivate() {
-        getLog().info("Activity util.activity.nativerunner activate");
-        
         nativeRunnerCollection.addNativeApplicationRunner(runner);
     }
 
