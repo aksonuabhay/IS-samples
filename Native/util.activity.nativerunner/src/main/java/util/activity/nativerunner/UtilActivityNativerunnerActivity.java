@@ -23,8 +23,8 @@ public class UtilActivityNativerunnerActivity extends BaseActivity {
 		addManagedResource(nativeRunnerCollection);
 
 		runner = nativeRunnerCollection.newNativeApplicationRunner();
-		runner.setExecutablePath("space.nativeapplication.executable");
-		runner.parseCommandArguments("space.nativeapplication.executable.flags");
+		runner.setExecutablePath(getConfiguration().getRequiredPropertyString("space.nativeapplication.executable"));
+		runner.parseCommandArguments(getConfiguration().getPropertyString("space.nativeapplication.executable.flags"));
 		runner.addNativeApplicationRunnerListener(new NativeApplicationRunnerListener() {
 			
 			public void onRestartSuccess(RestartStrategy<NativeApplicationRunner> arg0,
@@ -91,6 +91,7 @@ public class UtilActivityNativerunnerActivity extends BaseActivity {
     @Override
     public void onActivityActivate() {
         getLog().info("Activity util.activity.nativerunner activate");
+        
         nativeRunnerCollection.addNativeApplicationRunner(runner);
     }
 

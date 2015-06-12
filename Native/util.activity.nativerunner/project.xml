@@ -13,12 +13,12 @@
     <class>util.activity.nativerunner.UtilActivityNativerunnerActivity</class>
 
     <configuration>
-      <property name="space.activity.executable.linux" required="true">
+      <property name="space.nativeapplication.executable" required="true">
       	<value>/usr/bin/mpg321</value>
       </property>
       
-      <property name="space.activity.executable.flags.linux" required="true">
-        <value>-q ${activity.installdir}/NativeActivityExample.mp3</value>
+      <property name="space.nativeapplication.executable.flags" required="true">
+        <value>-q /home/abhay/Downloads/Mehboob_Ki.mp3</value>
         </property>
         
       <property name="space.activity.log.level" >
