@@ -51,6 +51,15 @@ public class SampleTalkerInputActivity extends BaseRoutableRosActivity {
     @Override
     public void onNewInputJson(String cName,Map<String, Object> message){
     	getLog().info("Input Channel" +cName);
-    	getLog().info(message);
+    	String recvd = message.get("message").toString();
+    	String items[]= recvd.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(" ", "").split(",");
+    	int results [] = new int[items.length];
+    	for (int i = 0; i < results.length; i++) {
+			results[i] = Integer.parseInt(items[i])&0xFF;
+		}
+    	for (int j = 0; j < results.length; j++) {
+        	getLog().info(results[j]);
+		}
+
     }
 }
