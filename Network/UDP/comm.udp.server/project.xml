@@ -13,6 +13,7 @@
     <class>comm.udp.server.CommUdpServerActivity</class>
 
     <configuration>
+    <property name = "space.comm.udp.server.host" required = "false" />
       <property name = "space.comm.udp.server.port" required = "true" >
       	<value>9000</value>
       </property>
