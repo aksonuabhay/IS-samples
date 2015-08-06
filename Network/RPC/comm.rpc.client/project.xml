@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project type="activity" builder="java">
+  <name>Comm Rpc Client</name>
+  <description>
+    Auto-generated activity for Comm Rpc Client
+  </description>
+
+  <identifyingName>comm.rpc.client</identifyingName>
+  <version>0.0.1</version>
+
+  <activity type="interactivespaces_native">
+    <name>comm.rpc.client</name>
+    <class>comm.rpc.client.CommRpcClientActivity</class>
+
+    <configuration>
+      <property name="space.activity.log.level" required="false">
+        <value>info</value>
+      </property>
+    </configuration>
+  </activity>
+</project>
