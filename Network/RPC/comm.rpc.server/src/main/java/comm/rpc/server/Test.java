@@ -1,9 +1,10 @@
 package comm.rpc.server;
 
 public class Test {
-    public void printYes()
+    public int printYes()
     {
     	System.out.println("In Yessssssssss");
+    	return 0;
     }
     
     public int printNo()
@@ -12,8 +13,22 @@ public class Test {
     	return 100;
     }
     
-    public void printNumber(int a)
+    public int printNumber(int a)
     {
     	System.out.println("In Number   "  + a);
+    	return a;
+    }
+    
+    public String printString(String a)
+    {
+    	System.out.println("In Number   "  + a);
+    	return a;
+    }
+    
+    //Has some problems
+    public void noReturn()
+    {
+    	System.out.println("In Noooooo");
+    	return 100;
     }
 }
